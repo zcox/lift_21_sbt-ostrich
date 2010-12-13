@@ -2,9 +2,8 @@ Install Java, Simple Build Tool, and Git
 
 Clone this repository with:
 
-git clone https://github.com/lift/lift_21_sbt.git
-
-Then cd into lift_21_sbt and type:
+git clone https://github.com/zcox/lift_21_sbt-ostrich
+Then cd into lift_21_sbt-ostrich and type:
 sbt
 
 At the sbt prompt, type:
@@ -13,7 +12,7 @@ update
 Then:
 jetty-run
 
-Point your browser to:
-http://localhost:8080/
+Point your browser to (I recommend Firefox with JSONView add-on):
+http://localhost:9990/stats
 
-Voila a running Lift app
+Voila a set of Ostrich stats
