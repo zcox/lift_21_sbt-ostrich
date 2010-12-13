@@ -12,6 +12,9 @@ import mapper._
 
 import code.model._
 
+import net.lag.configgy.{RuntimeEnvironment, Config}
+import com.twitter.ostrich.{ServiceTracker, Stats}
+
 
 /**
  * A class that's instantiated early and run.  It allows the application
@@ -70,5 +73,12 @@ class Boot {
 
     // Make a transaction span the whole HTTP request
     S.addAround(DB.buildLoanWrapper)
+    
+    // Ostrich setup
+    val runtime = new RuntimeEnvironment(getClass)
+    val config = new Config
+    config("admin_text_port") = Props.getInt("admin_text_port") openOr 9989
+    config("admin_http_port") = Props.getInt("admin_http_port") openOr 9990
+    ServiceTracker.startAdmin(config, runtime)
   }
 }

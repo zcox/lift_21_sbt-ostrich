@@ -9,6 +9,8 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
   // If you're using JRebel for Lift development, uncomment
   // this line
   // override def scanDirectories = Nil
+  
+  val jbossRepo = "jboss" at "http://repository.jboss.org/nexus/content/groups/public/"
 
   override def libraryDependencies = Set(
     "net.liftweb" %% "lift-webkit" % liftVersion % "compile->default",
@@ -16,6 +18,7 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
     "org.mortbay.jetty" % "jetty" % "6.1.22" % "test->default",
     "junit" % "junit" % "4.5" % "test->default",
     "org.scala-tools.testing" %% "specs" % "1.6.5" % "test->default",
-    "com.h2database" % "h2" % "1.2.138"
+    "com.h2database" % "h2" % "1.2.138",
+    "com.twitter" % "ostrich_2.8.0" % "2.2.10"
   ) ++ super.libraryDependencies
 }

@@ -11,6 +11,9 @@ syntax: glob
 # logs
 derby.log
 
+# ensime project file
+.ensime
+
 # eclipse conf file
 .settings
 .classpath
