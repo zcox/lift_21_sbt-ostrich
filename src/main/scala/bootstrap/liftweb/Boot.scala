@@ -77,8 +77,11 @@ class Boot {
     // Ostrich setup
     val runtime = new RuntimeEnvironment(getClass)
     val config = new Config
-    config("admin_text_port") = Props.getInt("admin_text_port") openOr 9989
     config("admin_http_port") = Props.getInt("admin_http_port") openOr 9990
     ServiceTracker.startAdmin(config, runtime)
+    
+    // A fake gauge...
+    import scala.math._
+    Stats.makeGauge("wtfs-per-min") { rint(random * 10) }
   }
 }

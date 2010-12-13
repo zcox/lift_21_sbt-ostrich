@@ -12,6 +12,8 @@ update
 Then:
 jetty-run
 
+Hit http://localhost:8080 several times to generate some data.
+
 Point your browser to (I recommend Firefox with JSONView add-on):
 http://localhost:9990/stats
 

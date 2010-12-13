@@ -1,8 +1,2 @@
-#Enable JMX (is this required?)
-jmx.enable=true
-
-#Enable and set port for Ostrich socket access (text output)
-admin_text_port=9989
-
 #Enable and set port for Ostrich web access (JSON output)
 admin_http_port=9990
